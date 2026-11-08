@@ -1,0 +1,3 @@
+const notice=document.getElementById('notice');
+const messages={exploit:'تنبيه: هذا الزر تجريبي ولا يشغّل استغلالاً أو حمولة فعلية حالياً.',packages:'مثبّت الحزم: الواجهة فقط؛ لم تتم إضافة وظيفة تثبيت PKG بعد.',tools:'أدوات النظام: ستضاف الأدوات المتوافقة بعد التحقق منها.',settings:'الإعدادات: هذه نسخة أولية قابلة للتطوير.',about:'واجهة أمجد ثامر. عند دمج كود WebKitty الأصلي يجب الحفاظ على حقوق المطورين وشروط AGPL-3.0-or-later.'};
+document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-action]').forEach(b=>b.classList.remove('active'));button.classList.add('active');notice.textContent=messages[button.dataset.action]||'غير متاح حالياً';}));
